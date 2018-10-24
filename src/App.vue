@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <router-view/>
+        <ul class="nav">
+        <li><router-link v-bind:to="{ name: 'Home'}" active class="active" exact>Home</router-link></li>
+        <li><router-link to=/survey active class="active" exact>Survey</router-link></li>
+        <li><router-link v-bind:to="{ name: 'Secret'}" active class="active" exact>Secret</router-link></li>
+    </ul>
   </div>
 </template>
 
@@ -28,5 +33,16 @@ body, html {
   background: #666;
   margin: 0;
   padding: 0;
+}
+.router-link-active {
+  font-size: larger;
+  background-color: green;
+}
+.nav {
+  background-color:grey;
+  width: 175px;
+}
+li {
+  display:inline;
 }
 </style>
