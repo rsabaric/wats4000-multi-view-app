@@ -103,10 +103,6 @@ export default {
         console.log('form is invalid');
         this.showError=true;
       }
-
-      // TODO: If all of the data is valid, then use the $router to move the user to the Secret page.
-      // TODO: If the data is not valid, alter the value of showError to show the error message.
-
     }
   }
 }

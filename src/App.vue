@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <router-view/>
+        <h1 @usernamein="msg = $event">{{msg}}</h1>
         <ul class="nav">
-        <li><router-link v-bind:to="{ name: 'Home'}" active class="active" exact>Home</router-link></li>
-        <li><router-link to=/survey active class="active" exact>Survey</router-link></li>
-        <li><router-link v-bind:to="{ name: 'Secret'}" active class="active" exact>Secret</router-link></li>
-    </ul>
+        <li><router-link to=/ active class="active" exact>Step 1: Login</router-link></li>
+        <li><router-link to=/survey active class="active" exact>Step 2: Survey</router-link></li>
+        <li><router-link to=/secret active class="active" exact>Step 3: Complete</router-link></li>
+        <li><router-link to=/puppypage active class="active" exact>Step 4: Puppy!</router-link></li>
+        </ul>
+    <router-view/>
   </div>
 </template>
 
 <script>
+
+import Home from './components/Home.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  data() {
+    return {
+      msg: ''
+    }
+  }
 }
 </script>
 
@@ -36,13 +46,19 @@ body, html {
 }
 .router-link-active {
   font-size: larger;
-  background-color: green;
+  background-color: #00cc99;
 }
 .nav {
   background-color:grey;
-  width: 175px;
+  display: block;
+  padding: 3px;
 }
 li {
   display:inline;
+  padding: 10px;
+}
+.active {
+  font-family:cursive;
+  text-decoration:none;
 }
 </style>

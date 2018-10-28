@@ -1,10 +1,15 @@
 <template>
   <div class="secret">
     <h1>{{message}}</h1>
-    <ul>
-        <li><router-link v-bind:to="{ name: 'Home'}">Home</router-link></li>
-        <li><router-link to=/survey>Survey</router-link></li>
-    </ul>
+    <h2>Would you like to continue?  Choose yes to see a photo of a puppy:</h2>
+     <form v-on:submit.prevent="validateForm">
+        <p class="privacy"><label>
+          <input type="checkbox" id="checkprivacy" v-model="checked">
+          <label for="checkprivacy" v-if="checked">Yes</label>
+          <label for="checkprivacy" v-else>No</label>
+          </label></p>
+          <p><input type="submit" value="I have made my choise"></p>
+    </form>
   </div>
   
 </template>
@@ -14,9 +19,17 @@ export default {
   name: 'Home',
   data () {
     return {
-      message: 'Thank you for completing the survey.  You may now have a cookie'
+      message: 'Thank you for completing the survey.  You may now have a cookie!',
+      checked: false
     }
   },
+    methods: {
+    validateForm: function () {
+      if (this.checked){
+        this.$router.push('Puppypage');
+      } 
+    }
+  }
 }
 </script>
 

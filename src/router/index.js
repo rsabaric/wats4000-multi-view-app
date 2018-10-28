@@ -3,8 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Survey from '@/components/survey'
 import Secret from '@/components/secret'
-// TODO: Import the Survey component
-// TODO: Import the Secret component
+import Puppypage from '@/components/puppypage'
 
 Vue.use(Router)
 
@@ -24,6 +23,11 @@ export default new Router({
       path: '/secret',
       name: 'Secret',
       component: Secret
+    },
+    {
+      path: '/puppypage',
+      name: 'Puppypage',
+      component: Puppypage
     }
   ]
 })

@@ -17,11 +17,16 @@
         <p><label>
           <input type="password" id="passwordVerify" v-model="passwordVerify" placeholder="Verify your password">
         </label></p>
+        <p class="privacy"><label>I agree to share all of the data I submit...as soon as I can figure out how to save it across pages!
+          <input type="checkbox" id="checkprivacy" v-model="checked">
+          <label for="checkprivacy" v-if="checked">Yes</label>
+          <label for="checkprivacy" v-else>No</label>
+        </label></p>
         <p><input type="submit" value="Submit"></p>
       </form>
     </div>
     <div v-show="!showForm" class="success-message">
-      <h1>Thank you for signing up!</h1>
+      <h1>Thank you for signing up {{ username }}!</h1>
       <p>Please take our new member survey. <router-link to="Survey">Click here</router-link></p>
     </div>
   </div>
@@ -38,14 +43,17 @@ export default {
       password: '',
       passwordVerify: '',
       showForm: true,
-      showError: false
+      showError: false,
+      checked: false
     }
   },
   methods: {
     validateForm: function () {
-      if((this.username !='') && (this.email !='') && (this.password===this.passwordVerify)){
+      if((this.username !='') && (this.email !='') && (this.password===this.passwordVerify)&&(this.checked)){
         console.log('form is valid');
         this.showForm = false;
+        this.$emit('usernamein',this.username);
+        console.log(this.username);
       } else {
         console.log('form is not valid');
         this.showError = true;
@@ -78,5 +86,11 @@ li {
 
 a {
   color: #42b983;
+}
+.privacy {
+  border: 1px solid black;
+  padding: .5rem;
+  display: inline;
+
 }
 </style>
