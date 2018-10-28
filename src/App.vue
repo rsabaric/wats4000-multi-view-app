@@ -45,20 +45,51 @@ body, html {
   padding: 0;
 }
 .router-link-active {
-  font-size: larger;
   background-color: #00cc99;
+
 }
+
 .nav {
   background-color:grey;
-  display: block;
-  padding: 3px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
 }
+
+
 li {
   display:inline;
   padding: 10px;
 }
+
 .active {
-  font-family:cursive;
-  text-decoration:none;
+  font-family:Helvetica, sans-serif;
+  text-decoration: none;
+  padding: 14px 16px;
+  display: block;
+  color: white;
+  text-align: center;
+  float: left;
+   
+    
+
+}
+
+  .button {
+    border-radius: 6px;
+    border-style: none;
+}
+
+.button:hover {
+    background-color:white;
+    border: 2px solid #e7e7e7; 
+}
+
+input[type="submit"] {
+    border: none;
+    font-size: 16px;
+    padding:8px;
+    background: none; 
 }
 </style>

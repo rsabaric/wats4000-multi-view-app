@@ -18,11 +18,12 @@
           <input type="password" id="passwordVerify" v-model="passwordVerify" placeholder="Verify your password">
         </label></p>
         <p class="privacy"><label>I agree to share all of the data I submit...as soon as I can figure out how to save it across pages!
-          <input type="checkbox" id="checkprivacy" v-model="checked">
-          <label for="checkprivacy" v-if="checked">Yes</label>
-          <label for="checkprivacy" v-else>No</label>
+           <input type="radio" id="yes" value="yes" v-model="checked">
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" value="no" v-model="checked">
+          <label for="no">No</label>
         </label></p>
-        <p><input type="submit" value="Submit"></p>
+        <p><button class="button"><input type="submit" value="Submit"></button></p>
       </form>
     </div>
     <div v-show="!showForm" class="success-message">
@@ -49,7 +50,7 @@ export default {
   },
   methods: {
     validateForm: function () {
-      if((this.username !='') && (this.email !='') && (this.password===this.passwordVerify)&&(this.checked)){
+      if((this.username !='') && (this.email !='') && (this.password===this.passwordVerify)&&(this.checked==="yes")){
         console.log('form is valid');
         this.showForm = false;
         this.$emit('usernamein',this.username);
@@ -90,7 +91,7 @@ a {
 .privacy {
   border: 1px solid black;
   padding: .5rem;
-  display: inline;
+  display: inline-block;
 
 }
 </style>

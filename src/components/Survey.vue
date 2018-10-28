@@ -31,7 +31,7 @@
             </select>
           </label>
         </p>
-        <p><input type="submit" value="Submit"></p>
+        <button class="button"><input type="submit" value="Submit"></button>
       </form>
   </div>
 </template>

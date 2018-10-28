@@ -38,6 +38,10 @@ li {
   margin: 0 10px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 a {
   color: #42b983;
 }
