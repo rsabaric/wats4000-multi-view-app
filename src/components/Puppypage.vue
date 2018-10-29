@@ -45,4 +45,7 @@ img {
 a {
   color: #42b983;
 }
+.router-link-active {
+  background-color: #00cc99;
+}
 </style>

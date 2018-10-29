@@ -13,8 +13,6 @@
 
 <script>
 
-import Home from './components/Home.vue'
-
 export default {
   name: 'app',
   data() {
@@ -44,7 +42,7 @@ body, html {
   margin: 0;
   padding: 0;
 }
-.router-link-active {
+.router-link-exact-active {
   background-color: #00cc99;
 
 }
@@ -63,6 +61,7 @@ li {
   padding: 10px;
 }
 
+
 .active {
   font-family:Helvetica, sans-serif;
   text-decoration: none;
@@ -70,9 +69,7 @@ li {
   display: block;
   color: white;
   text-align: center;
-  float: left;
-   
-    
+  float: left;     
 
 }
 
